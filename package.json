@@ -1,0 +1,22 @@
+{
+  "name": "Huh",
+  "version": "2.1.0",
+  "description": "oh",
+  "main": "music.js",
+  "scripts": {
+    "test": "node music.js"
+  },
+  "dependencies": {
+    "discord.js": "^11.3.2",
+    "discord.js-musicbot-addon": "^1.10.3",
+    "fs": "0.0.1-security",
+    "ytdl-core":"0.20.4" ,
+    "simple-youtube-api":"5.0.2" ,
+    "ffmpeg-binaries":"3.2.2-3" ,
+    "node-opus": "^0.2.7",
+    "opusscript": "0.0.6"
+  },
+  "engines": {
+    "node": "8.x"
+  }
+}
