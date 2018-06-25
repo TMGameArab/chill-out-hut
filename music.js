@@ -298,52 +298,5 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`playing: **${song.title}**`);
 }
 
-client.on('message', message => {
-var prefix = "..";
-
-if (!message.content.startsWith(tokens.prefix)) return;
-var args = message.content.split(' ').slice(1);
-var argresult = args.join(' ');
-if (message.author.id == 321017208740380673) return;
-if (message.content.startsWith(tokens.prefix + 'playing')) {
-if (message.author.id !== '321017208740380673') return message.reply('** sorry it only for OWNER **')
-client.user.setGame(argresult);
- message.channel.sendMessage(`**${argresult}** : playing change`)
-} else
-
-
-if (message.content.startsWith(tokens.prefix + 'stream')) {
-if (message.author.id !== '321017208740380673') return message.reply('** sorry it only for OWNER **')
-client.user.setGame(argresult, "http://twitch.tv/y04zgamer");
- message.channel.sendMessage(`**${argresult}** :stream change`)
-} else
-
-if (message.content.startsWith(tokens.prefix + 'setname')) {
-if (message.author.id !== '321017208740380673') return message.reply('** sorry it only for OWNER **')
-client.user.setUsername(argresult).the
-message.channel.sendMessage(`**${argresult}** : name change`)
-return message.reply("**i cant change it only after 2 hours**");
-} else
- 
-if (message.content.startsWith(tokens.prefix + 'setavatar')) {
-if (message.author.id !== '321017208740380673') return message.reply('** sorry it only for OWNER **')
-client.user.setAvatar(argresult);
- message.channel.sendMessage(`**${argresult}** : avatar change`);
-} else
-
-
-if (message.content.startsWith(tokens.prefix + 'watching')) {
-if (message.author.id !== '321017208740380673') return message.reply('** sorry it only for OWNER **')
- client.user.setActivity(argresult, {type : 'watching'});
-message.channel.sendMessage(`**${argresult}** : watching change`)
-}
-if (message.content.startsWith(prefix + 'listening')) {
-if (message.author.id !== '321017208740380673') return message.reply('** sorry it only for OWNER **')
-client.user.setActivity(argresult, {type : 'listening'});
-message.channel.sendMessage(`**${argresult}**: listing change`)
-}
-
-});
-
 
 client.login(TOKEN);
