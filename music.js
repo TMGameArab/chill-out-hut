@@ -298,6 +298,7 @@ function play(guild, song) {
 }
 
 client.on('message', message => {
+var prefix = "..";
 
 if (!message.content.startsWith(tokens.prefix)) return;
 var args = message.content.split(' ').slice(1);
