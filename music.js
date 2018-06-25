@@ -16,7 +16,7 @@ console.log(`
 Login successful.
 
 -----------------
-RoyalDev - Discord Bot
+cill out hut - Discord Bot
 -----------------
 ${client.user.username}
 
@@ -109,7 +109,7 @@ ${videos.map(video2 => `[${++index} ] \`${video2.title}\``).join('\n')}`)
 				}
 			}
 			return handleVideo(video, msg, voiceChannel);
-		} else if (command === `p`) {
+		}else if (command === `play`) {
 		const voiceChannel = msg.member.voiceChannel;
 		if (!voiceChannel) return msg.channel.send('you should be in voice channel!');
 		const permissions = voiceChannel.permissionsFor(msg.client.user);
