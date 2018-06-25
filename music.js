@@ -297,53 +297,13 @@ function play(guild, song) {
 
 	serverQueue.textChannel.send(`playing: **${song.title}**`);
 }
+client.on('ready', () => {
+   client.user.setGame("..play");
+}); 
 
-client.on('message', message => {
-var prefix = "..";
-
-if (!message.content.startsWith(prefix)) return;
-var args = message.content.split(' ').slice(1);
-var argresult = args.join(' ');
-if (message.author.id == 294155759741304833) return;
-if (message.content.startsWith(prefix + 'playing')) {
-if (message.author.id !== '294155759741304833') return message.reply('** this only for OWNER **')
-client.user.setGame(argresult);
- message.channel.sendMessage(`**${argresult}** playing changed`)
-} else
-
-
-if (message.content.startsWith(prefix + 'stream')) {
-if (message.author.id !== '294155759741304833') return message.reply('** this only for OWNER **')
-client.user.setGame(argresult, "http://twitch.tv/y04zgamer");
- message.channel.sendMessage(`**${argresult}** :streaming changed`)
-} else
-
-if (message.content.startsWith(prefix + 'setname')) {
-if (message.author.id !== '294155759741304833') return message.reply('** this only for OWNER **')
-client.user.setUsername(argresult).the
-message.channel.sendMessage(`**${argresult}** : name changed`)
-return message.reply("**لا تستطيع تغير الأسم الا بعد ساعتين**");
-} else
- 
-if (message.content.startsWith(prefix + 'setavatar')) {
-if (message.author.id !== '294155759741304833') return message.reply('** this only for OWNER **')
-client.user.setAvatar(argresult);
- message.channel.sendMessage(`**${argresult}** : avatar changed`);
-} else
-
-
-if (message.content.startsWith(prefix + 'watching')) {
-if (message.author.id !== '294155759741304833') return message.reply('** this only for OWNER **')
- client.user.setActivity(argresult, {type : 'watching'});
-message.channel.sendMessage(`**${argresult}** : watching changed`)
-}
-if (message.content.startsWith(prefix + 'listening')) {
-if (message.author.id !== '294155759741304833') return message.reply('** this only for OWNER **')
-client.user.setActivity(argresult, {type : 'listening'});
-message.channel.sendMessage(`**${argresult}**: listening changed`)
-}
-
-});
+client.on('ready', () => {
+   client.user.setAvatar("https://cdn.discordapp.com/attachments/459321481978052609/460841536486375435/iP8B0zT4MzRXAAAAAElFTkSuQmCC.png");
+}); 
 
 
 client.login(TOKEN);
