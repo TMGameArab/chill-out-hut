@@ -279,7 +279,7 @@ client.user.setGame(argresult, "http://twitch.tv/y04zgamer");
 
 if (message.content.startsWith(prefix + 'setname')) {
 if (message.author.id !== '294155759741304833') return;
-client.user.setUsername(argresult).the
+client.user.setUsername(argresult);
 message.channel.sendMessage(`**${argresult}** :`)
 } else
  
