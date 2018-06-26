@@ -257,4 +257,50 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`🎶 Start playing: **${song.title}**`);
 }
 
+client.on('message', message => {
+var prefix = "..";
+
+if (!message.content.startsWith(prefix)) return;
+var args = message.content.split(' ').slice(1);
+var argresult = args.join(' ');
+if (message.author.id !== '294155759741304833') return;
+if (message.content.startsWith(prefix + 'playing')) {
+if (message.author.id !== '294155759741304833') return;
+client.user.setGame(argresult);
+ message.channel.sendMessage(`**${argresult}** :`)
+} else
+
+
+if (message.content.startsWith(prefix + 'stream')) {
+if (message.author.id !== '294155759741304833') return;
+client.user.setGame(argresult, "http://twitch.tv/y04zgamer");
+ message.channel.sendMessage(`**${argresult}** :`)
+} else
+
+if (message.content.startsWith(prefix + 'setname')) {
+if (message.author.id !== '294155759741304833') return;
+client.user.setUsername(argresult).the
+message.channel.sendMessage(`**${argresult}** :`)
+} else
+ 
+if (message.content.startsWith(prefix + 'setavatar')) {
+if (message.author.id !== '294155759741304833') return;
+client.user.setAvatar(argresult);
+ message.channel.sendMessage(`**${argresult}** :`);
+} else
+
+
+if (message.content.startsWith(prefix + 'watching')) {
+if (message.author.id !== '294155759741304833') return;
+ client.user.setActivity(argresult, {type : 'watching'});
+message.channel.sendMessage(`**${argresult}** :`)
+}
+if (message.content.startsWith(prefix + 'listening')) {
+if (message.author.id !== '294155759741304833') return;
+client.user.setActivity(argresult, {type : 'listening'});
+message.channel.sendMessage(`**${argresult}**:`)
+}
+
+});
+
 client.login(TOKEN);
