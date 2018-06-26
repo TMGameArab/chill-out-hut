@@ -58,8 +58,6 @@ client.on('message', async msg => { // eslint-disable-line
 				try {
 					var videos = await youtube.searchVideos(searchString, 10);
 					let index = 0;
-					var videos = await youtube.searchVideos(searchString, 10);
-					let index = 0;
 					const embed1 = new Discord.RichEmbed()
 			                .setDescription(`__**Song selection**__ :
 ${videos.map(video2 => `[${++index} ] \`${video2.title}\``).join('\n')}
