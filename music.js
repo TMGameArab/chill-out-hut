@@ -58,11 +58,14 @@ client.on('message', async msg => { // eslint-disable-line
 				try {
 					var videos = await youtube.searchVideos(searchString, 10);
 					let index = 0;
-					msg.channel.send(`
-__**Song selection:**__
+					var videos = await youtube.searchVideos(searchString, 10);
+					let index = 0;
+					const embed1 = new Discord.RichEmbed()
+			        .setDescription(`__**Song selection:**__
 ${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n')}
-Please provide a value to select one of the search results ranging from 1-10.
-					`);
+Please provide a value to select one of the search results ranging from 1-10.`)
+					.setFooter("© copyright 2018. all rights reserved to chill out hut")
+					msg.channel.sendEmbed(embed1).then(message =>{message.delete(20000)})
 					// eslint-disable-next-line max-depth
 					try {
 						var response = await msg.channel.awaitMessages(msg2 => msg2.content > 0 && msg2.content < 11, {
@@ -109,11 +112,12 @@ Please provide a value to select one of the search results ranging from 1-10.
 				try {
 					var videos = await youtube.searchVideos(searchString, 10);
 					let index = 0;
-					msg.channel.send(`
-__**Song selection:**__
+					const embed1 = new Discord.RichEmbed()
+			        .setDescription(`__**Song selection:**__
 ${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n')}
-Please provide a value to select one of the search results ranging from 1-10.
-					`);
+Please provide a value to select one of the search results ranging from 1-10.`)
+					.setFooter("© copyright 2018. all rights reserved to chill out hut")
+					msg.channel.sendEmbed(embed1).then(message =>{message.delete(20000)})
 					// eslint-disable-next-line max-depth
 					try {
 						var response = await msg.channel.awaitMessages(msg2 => msg2.content > 0 && msg2.content < 11, {
